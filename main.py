@@ -38,8 +38,8 @@ def create_directory(myPath):
 def list_contents(myPath):
     if os.path.exists(myPath):
         #print(os.listdir(mmyPath))) #otra opcion
-            for elemento in os.scandir(myPath):
-                print(elemento)  
+        for elemento in os.scandir(myPath):
+            print(elemento)  
 
 def delete_directory(myPath):
     if os.path.exists(myPath):
