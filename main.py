@@ -1,7 +1,7 @@
 import os
 import argparse
 
-def main():
+def main() -> None:
     args = parser.parse_args()
     #argsDiccionario = vars(args) 
     #print(argsDiccionario)  
@@ -31,29 +31,29 @@ def main():
     if args.delete_file:
           delete_file(args.delete_file)
           
-def create_directory(myPath):
+def create_directory(myPath: str) -> None:
     if not os.path.exists(myPath):
         os.makedirs(myPath)
 
-def list_contents(myPath):
+def list_contents(myPath: str) -> None:
     if os.path.exists(myPath):
         #print(os.listdir(mmyPath))) #otra opcion
         for elemento in os.scandir(myPath):
             print(elemento)  
 
-def delete_directory(myPath):
+def delete_directory(myPath: str) -> None:
     if os.path.exists(myPath):
         os.rmdir(myPath)
 
-def create_file(fileName):
+def create_file(fileName: str) -> None:
     newFile = open(fileName, 'a')
     newFile.close()     
 
-def read_file(fileName):
+def read_file(fileName: str) -> None:
     newFile = open(fileName, 'r')
     print(newFile.read())
 
-def delete_file(fileName):
+def delete_file(fileName: str) -> None:
     os.remove(fileName)
 
 if __name__ == '__main__':
